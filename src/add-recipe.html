@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Metadata -->
+    <title>Add Recipe</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CL:wght@100..400&display=swap" rel="stylesheet">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/styles.css"/> 
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html">🍽️ Recipe Manager</a>
+    </div>
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="add-recipe.html">Add recipe</a></li>
+    </ul>
+  </nav>
+
+  <main class="card">
+    <header>
+      <h1 class="main-title">Propose a New Recipe</h1>
+    </header>
+
+    <form action="#" method="POST" class="recipe-form">
+      <section class="form-section">
+        <label for="title">Recipe Name</label>
+        <input type="text" id="title" name="title" required>
+      </section>
+
+      <section class="form-section">
+        <label for="time">Cooking Time</label>
+        <input type="text" id="time" name="time" placeholder="e.g. 1h30" required>
+      </section>
+
+      <section class="form-section">
+        <label for="price">Estimated Price</label>
+        <input type="text" id="price" name="price" placeholder="e.g. 12€" required>
+      </section>
+
+      <section class="form-section">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="6" required></textarea>
+      </section>
+
+      <section class="form-section">
+        <label for="image">Recipe Image URL</label>
+        <input type="url" id="image" name="image" placeholder="http://..." required>
+      </section>
+
+      <button type="submit" class="submit-btn">Submit Recipe</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ by <span class="colorfull">SWP</span>!</p>
+  </footer>
+</body>
+</html>

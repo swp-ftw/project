@@ -1,0 +1,91 @@
+.carousel ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    --visible-items: 4;
+    aspect-ratio: var(--visible-items)/1;
+    border-radius: 10px;
+
+    /* Image scaling on hover */
+    transition: 0.25s;
+}
+
+.carousel img:hover {
+    /* Image scaling on hover */
+    transform: scale(1.05);
+    transition: 0.25s;
+}
+
+.carousel-track-wrapper{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-track{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 calc(100% / var(--visible-items));
+    padding: 0 10px;
+    box-sizing: border-box;
+    height: 100%;
+}
+  
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.carousel-button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 100;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 50%;
+}
+
+.carousel-button.next{
+    right: 10px;
+}
+.carousel-button.prev{
+    left: 10px;
+}
+
+.carousel-button > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-button.prev > img{
+    transform: rotate(180deg);
+}
