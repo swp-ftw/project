@@ -1,0 +1,58 @@
+<%- include('partials/header', { title: 'Add Recipe' }) %>
+
+<header>
+  <h1 class="main-title">Submit a New Recipe</h1>
+</header>
+
+<form action="/add-recipe" method="POST" class="recipe-form">
+  <section class="form-section">
+    <label for="title">Recipe Name</label>
+    <input type="text" id="title" name="title" required>
+  </section>
+
+  <section class="form-section">
+    <label for="prepTime">Preparation Time</label>
+    <input type="text" id="prepTime" name="prepTime" placeholder="e.g. 20min" required>
+  </section>
+
+  <section class="form-section">
+    <label for="cookingTime">Cooking Time</label>
+    <input type="text" id="cookingTime" name="cookingTime" placeholder="e.g. 1h30" required>
+  </section>
+
+  <section class="form-section">
+    <label for="price">Estimated Price</label>
+    <input type="text" id="price" name="price" placeholder="e.g. 12€" required>
+  </section>
+
+  <section class="form-section">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="2" required></textarea>
+  </section>
+
+  <section class="form-section">
+    <label for="instructions">Steps</label>
+    <textarea id="instructions" name="instructions" rows="6" required></textarea>
+  </section>
+
+  <section class="form-section">
+    <label for="ingredients">Ingredients</label>
+    <textarea id="ingredients" name="ingredients" rows="6" required></textarea>
+  </section>
+
+  <section class="form-section">
+  <label for="imageDrop">Recipe Images</label>
+  <div id="drop-zone" class="drop-zone">
+    <p>Drag & drop multiple images here or click to select</p>
+    <input type="file" id="imageInput" name="imageFiles" accept="image/*" multiple hidden>
+    <div id="preview-container" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+  </div>
+  <input type="hidden" name="images" id="imagesBase64">
+</section>
+
+
+
+  <button type="submit" class="submit-btn">Submit Recipe</button>
+</form>
+
+<%- include('partials/footer') %>

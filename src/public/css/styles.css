@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,360;1,360&family=WDXL+Lubrifont+TC&display=swap');
+
 :root {
     --bg-color: #ffc876;
     --primary-color: #ff9900;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+#searchbar {
+    display: flex;
+    flex-direction: row;
+}
+
+#searchbar > * {
+    padding: 0.5rem;
+}
+
+#searchbar > input {
+    flex-grow: 1;
 }
 
 h1, h2, h3 {
@@ -276,8 +293,7 @@ form {
     color: var(--secondary-color);
 }
 
-.recipe-form input,
-.recipe-form textarea {
+input, textarea {
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -331,3 +347,107 @@ form {
         padding: 1rem;
     }
 }
+/* Dark mode variables */
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --primary-color: #ffa500; /* теплый оранжевый, как акцент */
+  --secondary-color: #ccc;
+  --shadow: 0 4px 20px rgba(255, 165, 0, 0.4);
+  background-color: var(--bg-color);
+  color: var(--secondary-color);
+}
+
+/* Main darkmode elements */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: var(--primary-color);
+}
+
+body.dark-mode .navbar {
+  background-color: #2a2a2a;
+  color: var(--secondary-color);
+  box-shadow: 0 2px 10px rgba(255, 165, 0, 0.6);
+}
+
+body.dark-mode .navbar-logo a,
+body.dark-mode .navbar-links a {
+  color: var(--secondary-color);
+}
+
+body.dark-mode .navbar-links a:hover {
+  color: var(--primary-color);
+}
+
+body.dark-mode main {
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 20px rgba(255, 165, 0, 0.25);
+}
+
+body.dark-mode .card {
+  background-color: #2c2c2c;
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode .tag {
+  background-color: var(--primary-color);
+  color: #1e1e1e;
+}
+
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: var(--secondary-color);
+  border-top: 1px solid var(--primary-color);
+}
+
+/* Inputs and form */
+body.dark-mode .recipe-form input,
+body.dark-mode .recipe-form textarea {
+  background-color: #3a3a3a;
+  color: var(--secondary-color);
+  border: 1px solid #555;
+  box-shadow: none;
+}
+
+body.dark-mode .recipe-form input:focus,
+body.dark-mode .recipe-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Buttons */
+body.dark-mode .submit-btn {
+  background-color: var(--primary-color);
+  color: #1e1e1e;
+}
+
+body.dark-mode .submit-btn:hover {
+  background-color: #cc8400;
+}
+
+/* Section titles hr */
+body.dark-mode .section-title > hr {
+  background-color: var(--primary-color);
+}
+
+/* Colorful animation */
+body.dark-mode .colorfull:hover {
+  animation: colorfullAnimation 1s infinite;
+}
+
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fffaf3;
+  transition: background-color 0.3s;
+}
+.drop-zone:hover {
+  background-color: #fff3e0;
+}
+#preview-container img {
+  max-height: 100px;
+  border-radius: 8px;
+}
+

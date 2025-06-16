@@ -89,3 +89,7 @@
 .carousel-button.prev > img{
     transform: rotate(180deg);
 }
+/* Carousel arrows darkmode  */
+body.dark-mode .carousel-button img {
+  filter: invert(1);
+}

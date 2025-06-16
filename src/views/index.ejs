@@ -1,0 +1,35 @@
+<%- include('partials/header', { title: 'Recipe manager' }) %>
+
+<header>
+  <h1 class="main-title">Recipe manager</h1>  
+</header>
+
+<div class="card" style="padding: 1rem">
+  <h2>Search for a recipe</h2>
+  <form id="searchbar" action="/?search=" method="get">
+    <input type="text" name="search" placeholder="Search for recipes..." value="<%= userInput %>">
+    <button type="submit" class="submit-btn">Search 🔍</button>
+  </form>
+</div>
+
+<section class="recipes-container">
+  <% recipes.forEach((recipe, index) => { %>
+    <a href="/recipe/<%= recipe.id %>">
+      <div class="card recipe">
+        <img src="<%= recipe.image %>" alt="Recipe Image">
+        <div class="recipe-description">
+          <div class="recipe-head">
+            <h3><%= recipe.title %></h3>
+            <div class="tags-container">
+              <span class="tag" type="time"><%= recipe.prepTime %></span>
+              <span class="tag" type="price"><%= recipe.price %></span>
+            </div>
+          </div>
+          <p><%= recipe.description %></p>
+        </div>
+      </div>
+    </a>
+  <% }); %>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,69 @@
+<%- include('partials/header', { title: recipe.title + ' - Recipe' }) %>
+
+<header>
+  <h1 class="main-title"><%= recipe.title %></h1>
+  <div class="tags-container">
+    <span class="tag" type="time"><%= recipe.prepTime %></span>
+    <span class="tag" type="price"><%= recipe.price %></span>
+  </div>
+</header>
+
+<section class="image-section">
+  <div class="carousel">
+    <button class="carousel-button prev">
+      <img src="/images/carrousel/arrow.svg" alt="Previous" class="prev-icon">
+    </button>
+
+    <div class="carousel-track-wrapper">
+      <ul class="carousel-track">
+        <% recipe.images.forEach(img => { %>
+          <li class="carousel-item"><img src="<%= img %>" alt="Image"></li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <button class="carousel-button next">
+      <img src="/images/carrousel/arrow.svg" alt="Next" class="prev-icon">
+    </button>
+  </div>
+</section>
+
+<section class="recipe-part">
+  <div class="section-title">
+    <h2>Ingredients</h2>
+    <hr>
+    <h2>🍱</h2>
+  </div>
+  <ul>
+    <% recipe.ingredients.forEach(item => { %>
+      <li><%= item %></li>
+    <% }) %>
+  </ul>
+</section>
+
+<section class="recipe-part">
+  <div class="section-title">
+    <h2>Time</h2>
+    <hr>
+    <h2>⏲️</h2>
+  </div>
+  <ul>
+    <li><strong>Cooking time :</strong> <%= recipe.cookingTime %></li>
+    <li><strong>Preparation time :</strong> <%= recipe.prepTime %></li>
+  </ul>
+</section>
+
+<section class="recipe-part">
+  <div class="section-title">
+    <h2>Instructions</h2>
+    <hr>
+    <h2>🔢</h2>
+  </div>
+  <ol>
+    <% recipe.steps.forEach(step => { %>
+      <li><%= step %></li>
+    <% }) %>
+  </ol>
+</section>
+
+<%- include('partials/footer') %>
